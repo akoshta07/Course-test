@@ -19,7 +19,7 @@ function MyCtrl($scope){
     }
   }
   else{
-    $scope.Mess="";
+    $scope.Mess="Please enter data first";
   }
   };
 
