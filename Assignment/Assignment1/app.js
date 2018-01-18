@@ -18,11 +18,10 @@ function MyCtrl($scope){
       $scope.Mess="Too Much!";
     }
   }
-  else{
+  else if ($scope.name == ""){
     $scope.Mess="Please enter data first";
   }
   };
-
 }
 
 })();
