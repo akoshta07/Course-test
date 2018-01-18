@@ -10,13 +10,16 @@ function MyCtrl($scope){
   $scope.Mess="";
   $scope.CheckLunch= function(){
     var item=$scope.name.split(',')
-   if($scope.name != ""){
+   if(item != ""){
     if ((item.length >= 1) && (item.length < 4)){
       $scope.Mess="Enjoy!";
     }
     else if (item.length >3){
       $scope.Mess="Too Much!";
     }
+  }
+  else{
+    $scope.Mess="";
   }
   };
 
