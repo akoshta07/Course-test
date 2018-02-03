@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="styles/styles.css">
   </head>
 <body ng-app="NarrowItDownApp">
-   <div class="container" ng-controller="NarrowItDownController as list">
+    <div class="container" ng-controller='NarrowItDownController as ctrl'>
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
     <div class="form-group">
-      <input type="text" placeholder="search term" class="form-control" ng-model="list.item">
+      <input type="text" placeholder="search term" class="form-control" ng-model="ctrl.searchWord">
     </div>
     <div class="form-group narrow-button">
-      <button class="btn btn-primary" ng-click="list.getMatchedMenuItems()">Narrow It Down For Me!</button>
-    </div>
-
+      <button class="btn btn-primary" ng-click="ctrl.getItems()">Narrow It Down For Me!</button>
+    </div> <br><br>
     <!-- found-items should be implemented as a component -->
-    <found-items found="list.found" on-remove="list.onRemove(index)"></found-items>
+    <found-items-dir  found-items="ctrl.items"
+                      on-remove="ctrl.remove(index)"
+                      can-show-empty="ctrl.canShowEmpty.canShow"></found-items-dir>
   </div>
 
 </body>
