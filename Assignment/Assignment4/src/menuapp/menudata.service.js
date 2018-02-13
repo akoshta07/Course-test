@@ -23,7 +23,7 @@ function MenuDataService($http){
             url: "https://davids-restaurant.herokuapp.com/menu_items.json" ,
             params:{
              category : shortName
-            }
+            }   
         });
 
     return response;
@@ -50,17 +50,16 @@ function MenuDataService($http){
         items=[];
         promise.then(function(response){
             var addItems = response.data;
-            var item = addItems.category;
+            var item = addItems.menu_items;
 
             for(var i=0; i<item.length ; i++){
                 items.push(item[i]);
             }
-            console.log(items);
         })
         .catch(function(error){
             console.log(error);
         });
-        
+
         return items;
     };
 }
